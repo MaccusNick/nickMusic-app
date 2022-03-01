@@ -1,1 +1,3 @@
-console.log('华为音乐')
+import "./icons.js";
+
+import Swiper from "./swiper.js";
