@@ -1,9 +1,115 @@
-$color: #ff00ff;
-$color2: #ffaa33;
+$backgroundColor: #060a3d;
+$color: #fff;
+$color1: #868aaf;
+$color2: #db3baa;
+$color2-dark: darken($color2, 10%);
+$color2-darker: darken($color2, 30%);
+$color3: #0025f1;
 
-body {
-  color: $color;
-  p {
-    color: $color2;
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#player {
+  height: 100vh;
+  background: $backgroundColor;
+  overflow: hidden;
+  .header {
+    text-align: center;
+    h1 {
+      color: $color;
+      font-size: 20px;
+      margin-top: 20px;
+    }
+    p {
+      color: $color1;
+      font-size: 12px;
+    }
+  }
+  .area-effect {
+    .balls {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+      span {
+        display: block;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: $color2-darker;
+        margin: 0 4px;
+        &.current {
+          width: 16px;
+          height: 16px;
+          background: $color2;
+        }
+      }
+    }
+    .panel-effect {
+      .effect {
+        position: relative;
+        display: flex;
+        height: 70vh;
+        justify-content: center;
+        align-items: center;
+        > div {
+          background-size: contain;
+          width: 70vw;
+          height: 70vw;
+          position: absolute;
+        }
+        .effect-1 {
+          background: url(../svg/effect-no-move.svg) 0 0 no-repeat;
+          width: 70vw;
+          height: 70vw;
+          animation: rotate 20s linear infinite;
+        }
+        .effect-2 {
+          background: url(../svg/effect-move1.svg) 0 0 no-repeat;
+          width: 60vw;
+          height: 60vw;
+          animation: rotate 10s linear infinite reverse;
+        }
+        .effect-3 {
+          background: url(../svg/effect-move2.svg) 0 0 no-repeat;
+          width: 24vw;
+          height: 24vw;
+          animation: rotate 10s linear infinite;
+        }
+      }
+      .lyric {
+        text-align: center;
+        p {
+          font-size: 13px;
+          color: $color1;
+          margin-top: 8px;
+          &.current {
+            color: $color;
+          }
+        }
+      }
+    }
+  }
+  .buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+
+    svg {
+      width: 24px;
+      height: 24px;
+      margin: 0 20px;
+    }
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
