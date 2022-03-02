@@ -205,28 +205,6 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 
-// const $ = (selector) => document.querySelector(selector);
-// const $$ = (selector) => document.querySelectorAll(selector);
-// class Player {
-//   constructor(node) {
-//     this.root = typeof node === "string" ? $(node) : node;
-//     this.songList = [];
-//     this.currentIndex = 0;
-//     this.audio = new Audio()
-//     this.start();
-//     this.bind()
-//   }
-//   start() {
-//     fetch("https://jirengu.github.io/data-mock/huawei-music/music-list.json")
-//       .then((res) => res.json())
-//       .then((data) => {
-//         this.songList = data;
-//       });
-//   }
-//   bind(){
-//   }
-// }
-// new Player("#player");
 var Player = /*#__PURE__*/function () {
   function Player(node) {
     var _this = this;
@@ -458,7 +436,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56069" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64300" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
